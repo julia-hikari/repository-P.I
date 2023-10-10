@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chartJS</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="display: flex;">
+  <div>
+    <canvas id="myChart" style="position: relative; height: 60vh; width: 60vw;"></canvas>
+  </div>
+  <div>
+    <canvas id="myChart2" style="position: relative; height: 60vh; width: 60vw;"></canvas>
+  </div>
+</body>
+
+</html>
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Temperatura Média',
+        data: [22, 24, 27, 23, 20, 18],
+        backgroundColor: [
+          'rgb(255,99,132)'
+
+        ],
+        borderColor: [
+          'rgb(255,99,132)'
+
+        ],
+        borderWidth: 2
+      },
+      {
+        label: 'Umidade Média',
+        data: [90, 89, 93, 87, 88, 82],
+        backgroundColor: [
+          'rgb(54,162,235)'
+        ],
+        borderColor: [
+          'rgb(54,162,235)'
+        ],
+        borderWidth: 2
+      }
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+
+  const ctx2 = document.getElementById('myChart2');
+
+  new Chart(ctx2, {
+    type: 'line',
+    data: {
+      labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+      datasets: [{
+        label: 'Temperaturas',
+        data: [30, 29, 28, 25, 22, 23],
+        Color: [
+          'rgb(255,99,132)'
+
+        ],
+        borderWidth: 3
+      },
+      {
+        label: 'Umidades',
+        data: [80, 82, 80, 85, 80, 83],
+        Color: [
+          'rgb(54,162,235)'
+        ],
+        borderWidth: 3
+      }
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
